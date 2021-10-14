@@ -1,15 +1,13 @@
-certs
-.bundle
-.yardoc
-test*.rb
-doc/
-.redcar
-pkg/
-/tmp
-.rvmrc
-.ruby-version
-.oauth
-.DS_Store
-.idea/
-Gemfile.lock
-tmp/
+# Compiled files
+*.tfstate
+*.tfstate.backup
+
+# Module directory
+.terraform
+.idea
+*.iml
+
+.build-harness
+build-harness
+
+test.log
