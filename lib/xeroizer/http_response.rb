@@ -127,8 +127,8 @@ module Xeroizer
 
     def raise_error!
       begin
-        error_details = JSON.parse(response.plain_body)
-        description  = error_details["Detail"]
+        error_details = Nokogiri::XML(response.plain_body)
+        description  = error_details.xpath('//ValidationErrors //Message').text
         case response.code.to_i
         when 400
           raise Xeroizer::BadResponse.new(description)
